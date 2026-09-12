@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dice Royale is a futuristic local dice battle arena.">
+    <title>Dice Royale | Dice Battle Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="premium-arena">
+    <div class="atmosphere" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <main class="app">
+        <header class="masthead">
+            <div class="eyebrow"><span></span> Dice Battle Arena <b></b></div>
+            <h1>Dice <em>Royale</em></h1>
+            <p>Every roll is a showdown. Claim the table.</p>
+        </header>
+        <section class="game-shell" aria-label="Dice Royale game">
+            <div class="shell-topline"><span>ARENA // 01</span><span class="live-status"><b></b> LIVE MATCH</span></div>
+            <section class="setup-panel" aria-labelledby="setupTitle">
+                <div class="section-heading"><span class="section-index">01</span>
+                    <div>
+                        <h2 id="setupTitle">Configure your table</h2>
+                        <p>Choose your contenders before the lights go up.</p>
+                    </div>
+                </div>
+                <div class="mode-switch" role="group" aria-label="Game mode"><button class="mode-option active"
+                        type="button" data-mode="computer"><span class="mode-icon">AI</span><span><strong>Player vs
+                                Computer</strong><small>Challenge the arena core</small></span><b>✓</b></button><button
+                        class="mode-option" type="button" data-mode="local"><span
+                            class="mode-icon">VS</span><span><strong>1 vs 1 Local</strong><small>Pass the crown, share
+                                the table</small></span><b>✓</b></button></div>
+                <div class="contestants">
+                    <div class="contestant-config">
+                        <div class="config-label"><span class="player-chip cyan">P1</span>
+                            <div><strong>Player one</strong><small>Human contender</small></div>
+                        </div><label class="sr-only" for="player1Name">Player 1 name</label><input id="player1Name"
+                            type="text" maxlength="18" placeholder="Enter your name" autocomplete="name">
+                        <div class="character-label">Select character</div>
+                        <div class="character-options" data-player="1"><button class="character-option selected"
+                                type="button" data-character="male" aria-label="Select male character"
+                                aria-pressed="true"><span class="avatar avatar-male mini"><i class="avatar-head"></i><i
+                                        class="avatar-body"></i></span><span>Male</span><b>✓</b></button><button
+                                class="character-option" type="button" data-character="female"
+                                aria-label="Select female character" aria-pressed="false"><span
+                                    class="avatar avatar-female mini"><i class="avatar-head"></i><i
+                                        class="avatar-body"></i></span><span>Female</span><b>✓</b></button></div>
+                    </div>
+                    <div class="contestant-config is-hidden" id="player2Config">
+                        <div class="config-label"><span class="player-chip magenta">P2</span>
+                            <div><strong>Player two</strong><small>Local contender</small></div>
+                        </div><label class="sr-only" for="player2Name">Player 2 name</label><input id="player2Name"
+                            type="text" maxlength="18" placeholder="Enter player 2 name" autocomplete="off">
+                        <div class="character-label">Select character</div>
+                        <div class="character-options" data-player="2"><button class="character-option selected"
+                                type="button" data-character="female" aria-label="Select female character for player 2"
+                                aria-pressed="true"><span class="avatar avatar-female mini"><i
+                                        class="avatar-head"></i><i
+                                        class="avatar-body"></i></span><span>Female</span><b>✓</b></button><button
+                                class="character-option" type="button" data-character="male"
+                                aria-label="Select male character for player 2" aria-pressed="false"><span
+                                    class="avatar avatar-male mini"><i class="avatar-head"></i><i
+                                        class="avatar-body"></i></span><span>Male</span><b>✓</b></button></div>
+                    </div>
+                    <div class="ai-note" id="aiNote"><span class="robot-mark">AI</span>
+                        <div><strong>Opponent protocol online</strong><small>Computer is assigned the arena
+                                robot</small></div><span class="signal-bars"><i></i><i></i><i></i></span>
+                    </div>
+                </div>
+            </section>
+            <section class="scoreboard" aria-label="Scoreboard">
+                <div class="score-box"><span id="score1Label">PLAYER 1 WINS</span><strong id="playerWins">0</strong>
+                </div>
+                <div class="score-box rounds-box"><span>ROUNDS</span><strong id="rounds">0</strong></div>
+                <div class="score-box"><span id="score2Label">COMPUTER WINS</span><strong id="computerWins">0</strong>
+                </div>
+            </section>
+            <div class="turn-indicator" id="turnIndicator" aria-live="polite"><span class="turn-pulse"></span><strong
+                    id="turnTitle">PLAYER 1 TURN</strong><small id="turnSubtitle">Roll the dice to attack</small></div>
+            <section class="arena" aria-label="Dice battle arena">
+                <article class="player-card" id="playerCard">
+                    <div class="card-corner">CONTENDER 01</div>
+                    <div class="winner-badge">WINNER</div>
+                    <div class="player-identity">
+                        <div class="avatar avatar-male large" id="playerAvatar"><i class="avatar-head"></i><i
+                                class="avatar-body"></i></div>
+                        <div><span class="identity-label">PLAYER ONE</span>
+                            <h3 id="player1Display">PLAYER 1</h3><span class="status" id="player1Status">READY</span>
+                        </div>
+                    </div>
+                    <div class="dice-wrap">
+                        <div class="dice" id="playerDice" aria-label="Player one die showing 1"><span
+                                class="dot d1"></span></div>
+                    </div>
+                    <div class="roll-readout"><span>ROLL VALUE</span><strong id="playerValue">1</strong></div>
+                </article>
+                <div class="versus"><span>VS</span><i></i></div>
+                <article class="player-card opponent-card" id="computerCard">
+                    <div class="card-corner">CONTENDER 02</div>
+                    <div class="winner-badge">WINNER</div>
+                    <div class="player-identity">
+                        <div class="avatar avatar-robot large" id="opponentAvatar"><i class="robot-eye left"></i><i
+                                class="robot-eye right"></i><i class="robot-mouth"></i></div>
+                        <div><span class="identity-label" id="opponentType">ARENA AI</span>
+                            <h3 id="player2Display">COMPUTER</h3><span class="status" id="player2Status">ONLINE</span>
+                        </div>
+                    </div>
+                    <div class="dice-wrap">
+                        <div class="dice" id="computerDice" aria-label="Opponent die showing 1"><span
+                                class="dot d1"></span></div>
+                    </div>
+                    <div class="roll-readout"><span>ROLL VALUE</span><strong id="computerValue">1</strong></div>
+                </article>
+            </section>
+            <section class="result" aria-live="polite">
+                <div>ROUND STATUS</div>
+                <h2 id="resultTitle">Ready to roll?</h2>
+                <p id="resultSubtitle">Set your contenders, then press the button to begin.</p>
+            </section>
+            <div class="controls"><button class="roll-btn" id="rollButton" type="button"><span>◆</span><span
+                        id="rollLabel">ROLL DICE</span>
+                    <kbd>SPACE</kbd></button><button class="reset-btn" id="resetButton" type="button">↻ Reset</button>
+            </div>
+            <section class="history" aria-labelledby="historyTitle">
+                <div class="history-header">
+                    <div><span class="section-index">02</span>
+                        <h2 id="historyTitle">Match history</h2>
+                    </div><span id="historyCount">0 rounds</span>
+                </div>
+                <div class="history-list" id="historyList">
+                    <div class="empty-history"><span>+</span>
+                        <p>Your first round is waiting.</p><small>Roll the dice to log the match.</small>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer><span>DR</span> DICE ROYALE <i></i> VANILLA ARENA SYSTEM</footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

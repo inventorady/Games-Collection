@@ -2,8 +2,8 @@
 
 
 1. snake game
+2. dice roller
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<.....   coming soon  .....>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-2. tic tac toe
-3. dice roller
+3. tic tac toe
 4. car racing game

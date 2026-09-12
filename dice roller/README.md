@@ -6,9 +6,6 @@ Dice Royale is a premium futuristic dice battle arena built with lightweight bro
 
 GitHub Pages placeholder: `https://your-username.github.io/dice-royale/`
 
-## Screenshots
-
-Add a project screenshot at `assets/screenshot.png` when publishing.
 
 ## Features
 

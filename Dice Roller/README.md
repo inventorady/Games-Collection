@@ -2,14 +2,6 @@
 
 Dice Royale is a premium futuristic dice battle arena built with lightweight browser technologies. Roll against the arena AI or challenge a local contender for the highest score.
 
-## Live Demo
-
-GitHub Pages placeholder: `https://your-username.github.io/dice-royale/`
-
-## Screenshots
-
-Add a project screenshot at `assets/screenshot.png` when publishing.
-
 ## Features
 
 - Player vs Computer and 1 vs 1 Local modes
